@@ -22,9 +22,10 @@ class Program
             entry = int.Parse(Console.ReadLine());
             nums.Add(entry);
         } while (entry != 0);
+        nums.Sort();
 
         // Uses .Where method to go through each number in the list and find the smallest positive number. If there are no positive numbers it will notice.
-        var smallestPositive = nums.Where(num => num > 0).OrderBy(num => num).FirstOrDefault();
+        var smallestPositive = nums.Where(num => num > 0).FirstOrDefault();
         if (smallestPositive == 0)
         {
             smallestAnswer = "(no positive numbers)";
@@ -40,6 +41,15 @@ class Program
         Console.WriteLine($"The average is: {nums.Average()}");
         Console.WriteLine($"The largest number is {nums.Max()}");
         Console.WriteLine($"The smallest positive number is: {smallestAnswer}");
+
+        // Gives the user the sorted list.
+        Console.WriteLine();
+        Console.WriteLine("The sorted list is:");
+        foreach (int num in nums)
+        {
+            Console.WriteLine(num);
+        }
+
         Console.WriteLine();
     }
 }
