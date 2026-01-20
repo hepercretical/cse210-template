@@ -6,7 +6,7 @@ class Program
     {
         // Creates the resume and assigns the name to it.
         Resume resume = new Resume();
-        resume._name = "Talmage";
+        resume._name = "Talmage Trebilcock";
 
         // Uses the Job class to store information about the first job and store it in the jobs list of the resume.
         Job job1 = new Job();
