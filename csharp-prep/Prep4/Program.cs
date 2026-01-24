@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
 
 class Program
 {
@@ -24,8 +22,22 @@ class Program
         } while (entry != 0);
         nums.Sort();
 
-        // Uses .Where method to go through each number in the list and find the smallest positive number. If there are no positive numbers it will notice.
-        var smallestPositive = nums.Where(num => num > 0).FirstOrDefault();
+        // Just read the FAQ and realized I used a lambda here before so I went ahead and used a loop to figure out the smallest positive number.
+        // 0 is the default output and if it is returned then we will know there was no positive numbers.
+        // Loop breaks at the first positive number since the list is already sorted.
+        int smallestPositive = 0;
+        foreach (int n in nums)
+        {
+            if (n <= 0)
+            {
+            }
+            else
+            {
+                smallestPositive = n;
+                break;
+            }
+        }
+
         if (smallestPositive == 0)
         {
             smallestAnswer = "(no positive numbers)";
