@@ -33,7 +33,7 @@ public class Journal
             string[] lines = System.IO.File.ReadAllLines(Journal._currentFileName);
 
             foreach (string line in lines)
-                {
+            {
                 string[] parts = line.Split("~|/");
                 string date = parts[0];
                 string prompt = parts[1];
@@ -42,7 +42,7 @@ public class Journal
                 Entry loadEntry = new Entry(date, prompt, entry);
                 Journal._entries.Add(loadEntry);
                 loadCount ++;
-                }
+            }
 
             UI.Display();
             Console.WriteLine();
