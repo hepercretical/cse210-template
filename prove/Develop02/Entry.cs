@@ -3,7 +3,6 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Entry
 {
-    public static int _entryNum;
     public string _date;
     public string _prompt;
     public string _entry;
