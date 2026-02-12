@@ -1,0 +1,37 @@
+@startuml classes
+class Program{
+    + Main() : void
+}
+
+class Journal{
+    + _entries : List<Entry>
+    + _fileName : string
+    + _entriesSinceSave : int
+
+    + Load() : void
+    + Save() : void
+    + SaveCheck(string action) : int
+    + Display() : void
+}
+
+class Entry{
+    + _date : string
+    + _prompt : string
+    + _entry : string
+
+    + Entry(string date, string prompt, string entry)
+    + NewEntry() : void
+}
+
+class PromptGenerator{
+    + _ prompts : List<string>
+
+    + PrepPromptList() : void
+    + Generate() : string
+}
+
+Program --* Journal
+Journal --* Entry : > has
+Entry --> PromptGenerator : > uses
+
+@enduml

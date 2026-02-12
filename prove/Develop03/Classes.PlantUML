@@ -1,0 +1,49 @@
+@startuml classes
+class Program{
+    + Main() : void
+}
+
+class Scripture {
+    - _words : List<Word>
+ 
+    + Scripture(words : List<Word>, reference : string)
+
+    + GetWords() : List<Word>
+    + SetWords(words : List<Word>) : void
+
+    + Display() : void
+}
+
+class Reference{
+    - _book : string
+    - _chapter : int
+    - _startVerse : int
+    - _endVerse : int
+    
+    + Reference(book : string, chapter : int, verse : int)
+    + Reference(book : string, chapter : int, startVerse : int, endVerse : int)
+    
+    + SetBook(b : string) : void
+    + SetChapter(n : int) : void
+    + SetStartVerse(n : int) : void
+    + SetEndVerse(n : int) : void
+    + GetReference() : string
+}
+
+class Word{
+    - _word : string
+    - _isHidden : bool
+    
+    + Word(w : string)
+
+    + GetWord() : Word
+    + SetWord() : void
+    + HideWord() : void
+    + RevealWord() : void
+}
+
+Program --> Scripture : > Displays
+Scripture --> Word : > Uses
+Scripture --> Reference : > Uses
+
+@enduml
