@@ -19,6 +19,7 @@ class Scripture
     public static void Display(Scripture s)
     {
         Console.Clear();
+        Console.WriteLine();
         Console.Write($"{Reference.GetReference()} ");
 
         string word;
