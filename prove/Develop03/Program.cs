@@ -21,6 +21,7 @@ class Program
             wordsLeft = Word.CheckLeftToHide(Scripture.GetWords(scripture)); 
             Scripture.HideWords(scripture, hideAmmount, wordsLeft);
         } while (quit != "quit" ^ wordsLeft == 0);
+        
         Console.Clear();
         Console.WriteLine("Goodbye!");
     }

@@ -6,12 +6,10 @@ class Program{
 class Scripture {
     - _words : List<Word>
  
-    + Scripture(words : List<Word>, reference : string)
-
-    + GetWords() : List<Word>
-    + SetWords(words : List<Word>) : void
-
-    + Display() : void
+    + Scripture(words : List<Word>)
+    + GetWords(s : Scripture) : List<Word>
+    + Display(s : Scripture) : void
+    + HideWords(s : Scripture) : void
 }
 
 class Reference{
@@ -19,14 +17,9 @@ class Reference{
     - _chapter : int
     - _startVerse : int
     - _endVerse : int
-    
-    + Reference(book : string, chapter : int, verse : int)
-    + Reference(book : string, chapter : int, startVerse : int, endVerse : int)
-    
-    + SetBook(b : string) : void
-    + SetChapter(n : int) : void
-    + SetStartVerse(n : int) : void
-    + SetEndVerse(n : int) : void
+
+    + Reference(b : string, c : int, v : int)
+    + CreateReference() : void
     + GetReference() : string
 }
 
@@ -35,15 +28,16 @@ class Word{
     - _isHidden : bool
     
     + Word(w : string)
-
-    + GetWord() : Word
-    + SetWord() : void
-    + HideWord() : void
-    + RevealWord() : void
+    + ProcessQuote(quote : string) : List<Word>
+    + GetWords(quote : string) : Word : List<Word>
+    + GetWord(w : Word) : string
+    + HideWord(w : Word) : void
+    + IsHidden(w : Word) : bool
+    + CheckLeftToHide(words : List<Word>) : int
 }
 
-Program --> Scripture : > Displays
-Scripture --> Word : > Uses
-Scripture --> Reference : > Uses
+Program *-- Scripture : > Displays scripture using
+Scripture *-- Word : > Gets words from
+Scripture *-- Reference : > Gets reference from
 
 @enduml

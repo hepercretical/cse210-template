@@ -8,20 +8,20 @@ class Reference
     private static int _startVerse;
     private static int _endVerse;
 
-    public Reference(string book, int chapter, int verse)
+    public Reference(string b, int c, int v)
     {
-        _book = book;
-        _chapter = chapter;
-        _startVerse = verse;
+        _book = b;
+        _chapter = c;
+        _startVerse = v;
         _endVerse = 0;
     }
 
-    public Reference(string book, int chapter, int startVerse, int endVerse)
+    public Reference(string b, int c, int v1, int v2)
     {
-        _book = book;
-        _chapter = chapter;
-        _startVerse = startVerse;
-        _endVerse = endVerse;
+        _book = b;
+        _chapter = c;
+        _startVerse = v1;
+        _endVerse = v2;
     }
     
     public static void CreateReference()

@@ -4,25 +4,25 @@ using System.Security.Cryptography;
 
 class Scripture
 {
-    private List<Word> _scriptureWords;
+    private List<Word> _words;
     
     public Scripture(List<Word> words)
     {
-        _scriptureWords = words;
+        _words = words;
     }
 
     public static List<Word> GetWords(Scripture s)
     {
-        return s._scriptureWords;
+        return s._words;
     }
 
-    public static void Display(Scripture scripture)
+    public static void Display(Scripture s)
     {
         Console.Clear();
         Console.Write($"{Reference.GetReference()} ");
 
         string word;
-        foreach (Word w in scripture._scriptureWords)
+        foreach (Word w in s._words)
         {
             word = Word.GetWord(w);
             if (Word.IsHidden(w) == false)
@@ -53,9 +53,9 @@ class Scripture
         int randomNum;
         for (int i = 0; i < n; i++)
         {
-            randomNum = random.Next(s._scriptureWords.Count);
-            if (Word.IsHidden(s._scriptureWords[randomNum]) == false)
-                Word.HideWord(s._scriptureWords[randomNum]);
+            randomNum = random.Next(s._words.Count);
+            if (Word.IsHidden(s._words[randomNum]) == false)
+                Word.HideWord(s._words[randomNum]);
             else
             {
                 i = i - 1;
