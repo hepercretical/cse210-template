@@ -1,0 +1,49 @@
+@startuml classes
+class Program{
+    + Main() : void
+}
+
+class Activity {
+    - _duration : int
+    - _pauseTime : int
+    - _endMessage : string
+
+    + Activity(duration : int)
+    + EndActivity() : void
+    + PauseAnimation() : void
+}
+
+class BreathingActivity{
+    - _description : string
+
+    + BreathingActivity()
+    + StartBreathing()
+    + BreathingAnimation()
+}
+
+class ReflectingActivity{
+    - _description : string
+    - _prompts : List<string>
+    - _questions : List<string>
+
+    + ReflectingActivity()
+    + StartReflection()
+}
+
+class ListingActivity{
+    - _description : string
+    - _prompts : List<string>
+    - _entries : int
+
+    + ListingActivity()
+    + StartListing() : void
+    + SetEntries() : void
+    + GetEntries() : int
+}
+
+Program <-- Activity
+Activity <|-- ReflectingActivity
+Activity <|-- BreathingActivity
+Activity <|-- ListingActivity
+
+@enduml

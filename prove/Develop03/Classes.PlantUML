@@ -19,6 +19,7 @@ class Reference{
     - _endVerse : int
 
     + Reference(b : string, c : int, v : int)
+    + Reference(b : string, c : int, vFirst : int, vLast : int)
     + CreateReference() : void
     + GetReference() : string
 }
