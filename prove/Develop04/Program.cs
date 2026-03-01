@@ -7,6 +7,9 @@ class Program
         int userSelection;
         string activityType = "";
 
+        // I added different kinds of times for different parts of the program to make it look cleaner and unique.
+        // Specifically the loading bar that is in the Activity Class and the breathing animation in the BreathingActivity class.
+
         do
         {
             Console.Clear();
