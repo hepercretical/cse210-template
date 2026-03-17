@@ -2,6 +2,10 @@ using System;
 
 class Program
 {
+    // For teh unique functionality I made it so instead of asking the user what their bonus reward should be 
+    // for their checklist goal, it calculates one for them using the ammount they normally get for completion
+    // and how many times they have to repeat it. Goals with higher rewards and that take more repetitions to
+    // complete will earn significantly more points automatically because of their value and difficulty. 
     static void Main(string[] args)
     {
         int userSelection = 0;
