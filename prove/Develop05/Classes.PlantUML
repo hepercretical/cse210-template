@@ -1,0 +1,54 @@
+@startuml classes
+class Program{
+    + Main() : void
+}
+
+class Goal{
+    - _name : string
+    - _description : string
+
+    + Activity(name : string, description : string)
+    + RecordEvent()
+}
+
+class SimpleGoal{
+    - _reward : int
+
+    + SimpleGoal()
+    + RecordEvent()
+}
+
+class EternalGoal{
+    - _reward : int
+    - _numCompleted : int
+
+    + EternalGoal()
+    + RecordEvent()
+}
+
+class ChecklistGoal{
+    - _reward : int
+    - _bonusPoints : int
+    - _numCompleted : int
+    - _ammount : int
+
+    + ChecklistGoal(ammount : int)
+    + RecordEvent()
+}
+
+class Menu{
+    - _goals : List<Goal>
+
+    + MenuOptions()
+    + ListGoals()
+    + SaveGoals()
+    + LoadGoals()
+}
+
+Program <-- Goal
+Program <-- Menu
+Goal <|-- SimpleGoal
+Goal <|-- EternalGoal
+Goal <|-- ChecklistGoal
+
+@enduml
