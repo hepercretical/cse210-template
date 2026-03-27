@@ -1,0 +1,50 @@
+@startuml classes
+class Program{
+    + Main() : void
+}
+
+class Product{
+    - _name : string
+    - _pruductId : int
+    - _pricePer : int
+    - _quantity : int
+
+    + Product(name : string, productId : int, pricePer : int, quantity : int)
+    + ComputeCost(pricePer : int, quantity: int)
+}
+
+class Customer{
+    - _name : string
+    - _address : Address
+    
+    + InUsa(address : string)
+}
+
+class Address{
+    - _street : string
+    - _city : string
+    - _state : string
+    - _country : string
+
+    + InUsa()
+    + DisplayAddress(street : string, city : string, state : string, country : string)
+}
+
+class Order{
+    - _customer : Customer
+    - _products : List<Product>
+    - _oneTimeShippingCost : int
+    
+
+    + Order(customer : Customer, items : List<Product>)
+    + CalculateShippingCost(inUsa : bool)
+    + GetPackingLabel()
+    + GetShippingLabel(name : string, address : string)
+}
+
+Program --* Customer
+Customer --* Order : has
+Customer --* Address : has
+Order --* Product : has
+
+@enduml

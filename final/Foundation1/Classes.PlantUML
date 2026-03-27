@@ -1,0 +1,30 @@
+@startuml classes
+class Program{
+    + Main() : void
+}
+
+class Video{
+    - _title : string
+    - _author : string
+    - _length : int
+    - _comments : List<Comment>
+
+    + Video(title : string, author : string, length : int)
+    + GetTitle()
+    + GetAuthor()
+    + GetLength()
+}
+
+class Comment{
+    - _username : string
+    - _commentText : string
+
+    + Comment(username : string, text : string)
+    + GetUsername()
+    + GetText()
+}
+
+Video --* Comment : has
+Program --* Video
+
+@enduml

@@ -1,0 +1,35 @@
+@startuml classes
+
+class Program{
+    + Main() : void
+}
+
+class Event{
+    - _title : string
+    - _description : string
+    - _date : string
+    - _time : string
+    - _address : string
+
+    + Event(title : string, description : string, date : string, time : string, address : string)
+}
+
+class Lecture{
+    - _speakerName : string
+    - _capacity : int
+}
+
+class Reception{
+    - _email : string
+}
+
+class OutdoorGathering{
+    - _weatherStatement : string
+}
+
+Event --* Program
+Lecture --* Event : is an
+Reception --* Event : is an
+OutdoorGathering --* Event : is an
+ 
+@enduml

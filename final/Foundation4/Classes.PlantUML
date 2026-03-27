@@ -1,0 +1,46 @@
+@startuml classes
+class Program{
+    + Main() : void
+}
+
+class Activity{
+    - _name : string
+    - _description : string
+    - _duration : int
+    - _distance : int
+    - _speed : int
+    - _pace : int
+    - _date : string
+
+    + Excercise(name : string, description : string)
+    + PrintSummary()
+    + CalculateDistance()
+    + CalculateSpeed()
+    + CalculatePace()
+    + GetSummary(date : string, activityType : string, duation : int, distance : int, speed : int, pace : int)
+}
+
+class Running{
+    + CalculateDistance()
+    + CalculateSpeed()
+    + CalculatePace()
+}
+
+class StationaryBicycles{
+    + CalculateDistance()
+    + CalculateSpeed()
+    + CalculatePace()
+}
+
+class SwimmingLaps{
+    + CalculateDistance()
+    + CalculateSpeed()
+    + CalculatePace()
+}
+
+Program --* Activity
+Activity <|-- Running
+Activity <|-- StationaryBicycles
+Activity <|-- SwimmingLaps
+
+@enduml
