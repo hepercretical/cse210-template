@@ -20,6 +20,7 @@ class Program
         sullyOrder.AddProduct(new Product("Garlic Salt", 346758, 2, 1));
         sullyOrder.AddProduct(new Product("Unsalted Butter", 1290567234, 6, 4));
         
+        // Displays the packing label and shipping label.
         Console.WriteLine("=======================================================");
 
         Console.WriteLine("Packing Label:");
