@@ -20,13 +20,14 @@ public class Video
 
     public void Display()
     {
+        Console.WriteLine("Video:");
         Console.WriteLine($"{_title}");
         Console.WriteLine($"By: {_author}");
         Console.WriteLine($"Length: {_length} seconds");
         Console.WriteLine($"{_comments.Count()} Comments");
         Console.WriteLine();
         
-        Console.WriteLine("Comments");
+        Console.WriteLine("Comments:");
         foreach (Comment c in _comments)
         {
             Console.WriteLine($"{c.GetName()}'s comment:");
