@@ -1,15 +1,15 @@
 public class StationaryBicycles : Activity
 {
-    private int _speed;
+    private double _speed;
 
     public StationaryBicycles(int duration, string date, int speed) : base(duration, date)
     {
-        _speed = speed
+        _speed = speed;
     }
 
     public override double CalculateDistance()
     {
-        return _speed * GetDuration();
+        return Math.Round((_speed * GetDuration()) / 60, 2);
     }
 
     public override double CalculateSpeed()
@@ -19,7 +19,7 @@ public class StationaryBicycles : Activity
 
     public override double CalculatePace()
     {
-        return GetDuration() / CalculateDistance();
+        return Math.Round(GetDuration() / CalculateDistance(), 2);
     }
 
     public override string GetActivityType()

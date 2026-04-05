@@ -1,6 +1,6 @@
 public class Activity
 {
-    private int _duration;
+    private double _duration;
     private string _date;
 
     public Activity(int duration, string date)
@@ -9,24 +9,24 @@ public class Activity
         _date = date;
     }
 
-    public int GetDuration()
+    public double GetDuration()
     {
         return _duration;
     }
 
     public virtual double CalculateDistance()
     {
-        return 1;
+        return 9999999999999999999;
     }
 
     public virtual double CalculateSpeed()
     {
-        return 1;
+        return 9999999999999999999;
     }
 
     public virtual double CalculatePace()
     {
-        return 1;
+        return 9999999999999999999;
     }
 
     public virtual string GetActivityType()
@@ -34,7 +34,7 @@ public class Activity
         return "Unknown";
     }
 
-    public string GetSummarny()
+    public string GetSummary()
     {
         return $"{_date} {GetActivityType()} ({_duration} min): Distance {CalculateDistance()} miles, Speed {CalculateSpeed()} mph, Pace: {CalculatePace()} min per mile";
     }

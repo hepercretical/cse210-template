@@ -1,6 +1,8 @@
+using System.Runtime.Intrinsics.X86;
+
 public class SwimmingLaps : Activity
 {
-    private int _numOfLaps;
+    private double _numOfLaps;
 
     public SwimmingLaps(int duration, string date, int numOfLaps) : base(duration, date)
     {
@@ -9,17 +11,17 @@ public class SwimmingLaps : Activity
 
     public override double CalculateDistance()
     {
-        return _numOfLaps * 50 / 1000 * 0.62;
+        return Math.Round(_numOfLaps * 0.0310686, 2);
     }
 
     public override double CalculateSpeed()
     {
-        return CalculateDistance() / GetDuration() * 60;
+        return Math.Round(CalculateDistance() / GetDuration() * 60, 2);
     }
 
     public override double CalculatePace()
     {
-        return GetDuration() / CalculateDistance();
+        return Math.Round(GetDuration() / CalculateDistance(), 2);
     }
 
     public override string GetActivityType()
